@@ -1,0 +1,26 @@
+{
+  // 編譯器選項
+  "compilerOptions": {
+    "target": "es6",         // 將JS轉換到最廣泛使用的es5版本，(ES6 = ES2015)
+    "module": "commonjs",    // 選用模塊化規範，常見如 'commonjs'、'amd'、'system'、'umd' ,
+    "lib": [                 // 告訴TS會使用的哪些庫，一般情況此處可以不需要定義
+      "es2017",              // js版本，此處設定是為了使用 async、await等異步語法                          
+      "dom"                  // dom語言，如 document.getElementById("")
+    ],
+    "rootDir": "./src",      // 來源，你開發測試專案地方。
+    "outDir": "./build",     // 輸出成JS，實際服務器部署時使用。
+    "allowJs": false,        // 使否對.js文件編譯，這裡設為不啟用                             
+    "checkJs": false,        // 承上，和 allowJs 是一起用的。 
+    "removeComments": true,  // 移除註釋
+    "strict": true,          // 嚴格檢查的總開關，當為false時，底下的嚴格檢查項目都會被關閉。
+    "alwaysStrict": true,    // 編譯後的文件也啟用JS的嚴格模式。
+    "noEmitOnError": true,   // 錯誤時不產生編譯後文件。
+    "noImplicitAny": true,   // 一般情況下要禁用any類型，但某些情快下可以設定先為false
+    "noImplicitThis": true,  // 不允許不明確的類型的this
+    "strictNullChecks": true,// 嚴格檢查空值，如 node = document.getElementById("a") 時，node可能為null(報錯)，須對node做空值檢查通過才能繼續使用它。
+    "esModuleInterop": true  /* Enables emit interoperability between CommonJS and ES Modules via creation of namespace objects for all imports. Implies 'allowSyntheticDefaultImports'. */,
+    "experimentalDecorators": true /* Enables experimental support for ES7 decorators. */,
+    "skipLibCheck": true /* Skip type checking of declaration files. */,
+    "forceConsistentCasingInFileNames": true /* Disallow inconsistently-cased references to the same file. */
+  }
+}

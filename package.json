@@ -1,0 +1,24 @@
+{
+  "name": "ts-next-shop",
+  "version": "1.0.0",
+  "description": "A full stack e-commerce website for learning purposes and built with Typescript, Nextjs, Redux-toolkit, semantic-ui-react",
+  "main": "index.js",
+  "scripts": {
+    "server": "npm run dev --prefix server",
+    "client": "npm run dev --prefix client",
+    "dev": "concurrently \"npm run server\" \"npm run client\""
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nilswg/ts-next-shop.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/nilswg/ts-next-shop/issues"
+  },
+  "homepage": "https://github.com/nilswg/ts-next-shop#readme",
+  "devDependencies": {
+    "concurrently": "^6.3.0"
+  }
+}
