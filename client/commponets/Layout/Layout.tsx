@@ -1,0 +1,60 @@
+import Head from "next/head";
+import Router from "next/router";
+// import NProgress from 'nprogress';
+import { useEffect } from "react";
+
+import Header from "./Header";
+// import { initGA, logPageView } from '@/utils/analytics';
+
+import Footer from "./Footer";
+
+import { Container } from "semantic-ui-react";
+
+// NProgress.configure({ showSpinner: false });
+
+// Router.events.on('routeChangeStart', () => {
+//   NProgress.start();
+// });
+
+// Router.events.on('routeChangeComplete', () => {
+//   NProgress.done();
+// });
+
+// Router.events.on('routeChangeError', () => {
+//   NProgress.done();
+// });
+
+declare const window: Window &
+  typeof globalThis & {
+    GA_INITIALIZED: any;
+  };
+
+interface Props {
+  title?: string;
+}
+
+const Layout: React.FC<Props> = ({ children, title = "Dress Shop" }) => {
+  //   useEffect(() => {
+  //     if (!window.GA_INITIALIZED) {
+  //       initGA();
+  //       window.GA_INITIALIZED = true;
+  //     }
+  //     logPageView();
+  //   }, []);
+
+  return (
+    <>
+      <Head>
+        <title>{title}</title>
+        <meta property="og:title" content={title} key="title" />
+      </Head>
+      <Header />
+      <main>
+        <Container>{children}</Container>
+      </main>
+      <Footer />
+    </>
+  );
+};
+
+export default Layout;

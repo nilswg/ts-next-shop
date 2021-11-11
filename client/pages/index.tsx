@@ -1,13 +1,14 @@
 import { InferGetStaticPropsType } from "next";
 import { API_URL } from "../utils/config";
-import { catchError } from "../utils/catchError";
+import Meta from "../commponets/Meta";
 
 const Home = ({ pong }: InferGetStaticPropsType<typeof getStaticProps>) => {
   return (
     <>
+      <Meta />
       <h1> PING/PONG Test</h1>
       <h3>If test success, you will see pong below 👇</h3>
-      {pong ? <h2>{pong.value}</h2> : <h2>PING... </h2>}
+      {pong && <h2>{pong.value}</h2>}
     </>
   );
 };
@@ -30,7 +31,8 @@ export async function getStaticProps() {
 
     pong = res.data;
   } catch (error) {
-    throw new Error(catchError(error));
+    pong = { value: "loading...2222222" };
+    console.error("連線失敗", process.env.NODE_ENV)
   }
 
   return {
